@@ -51,8 +51,6 @@ if st.button("Generate Quotation"):
             data=pdf_remote,
             file_name=file_name,
             mime="application/octet-stream")
-        
-        st.success(f"Quotation Generated for {file_name}")
 
 
 
