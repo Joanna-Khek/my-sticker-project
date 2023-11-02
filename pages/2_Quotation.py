@@ -31,20 +31,18 @@ st.markdown(f"Total Price: <span style='color:#ff6854;'>${total_quotation_price}
             unsafe_allow_html=True)
 
 file_name=f"{quotation_num}_({project_name}).pdf".replace(" ", "_")
-file_path = f"data/{file_name}"
-
 
 if st.button("Generate Quotation"):
     with st.status("Generating Quotation...",expanded=True):
-        pdf_local, pdf_remote = utils.generate_quotation_invoice(file_name=file_name,
-                                                                 project_name=project_name,
-                                                                 client_contact_person=client_contact_person,
-                                                                 client_company_name=client_company_name,
-                                                                 client_email=client_email,
-                                                                 reference_num=quotation_num,
-                                                                 df_items=df_items,
-                                                                 total_price=total_quotation_price,
-                                                                 )
+        pdf_remote = utils.generate_quotation_invoice(file_name=file_name,
+                                                      project_name=project_name,
+                                                      client_contact_person=client_contact_person,
+                                                      client_company_name=client_company_name,
+                                                      client_email=client_email,
+                                                      reference_num=quotation_num,
+                                                      df_items=df_items,
+                                                      total_price=total_quotation_price,
+                                                      )
         
     
         # Preview Invoice
