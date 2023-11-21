@@ -95,7 +95,7 @@ def display_project_details() -> List:
 
     return list_item, list_quantity, list_rate, list_amount, total_quotation_price
 
-def display_project_info_inputs():
+def display_project_info_inputs(category):
     """Show project information inputs for quotation and invoice tab
 
     Args:
@@ -104,15 +104,15 @@ def display_project_info_inputs():
     """
    
     # Blank quotation
-    category = st.text_input(label="Category")
-    quotation_num = st.text_input(label="Quotation Number")
+    category = st.text_input(label="Category", value=category, disabled=True)
+    reference_num = st.text_input(label="Reference Number")
     project_name = st.text_input(label="Project Name")
     client_contact_person = st.text_input(label="Client Contact Person")
     client_company_name = st.text_input(label="Client Company Name")
     client_email = st.text_input(label="Client Email")
     
     # Save all the information
-    dict_project_info = {'quotation_num': quotation_num,
+    dict_project_info = {'reference_num': reference_num,
                          'category': category,
                          'project_name': project_name,
                          'client_contact_person': client_contact_person,

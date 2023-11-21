@@ -126,8 +126,7 @@
 								</td>
 
 								<td style="width: 40%">
-									<h1>{{CATEGORY}}</h1>
-									<p text-align:left>{{REFERENCE_NUM}}</p> <br />
+									<h1 style="font-size: 50px">{{CATEGORY}}</h1>
 								</td>
 
 							</tr>
@@ -146,15 +145,32 @@
 									{{CLIENT_EMAIL}}<br />
 								</td>
 								
+								{% if TYPE == 'Quotation' %}
 								<td style="text-align:right">
 									Date:<br />
-
+									Quotation No.:<br />
 								</td>
 
 								<td style="text-align:right">
 									{{DATE_TODAY}}<br />
+									{{REFERENCE_NUM}}<br />
 
 								</td>
+								{% endif %}
+
+								{% if TYPE == 'Invoice' %}
+								<td style="text-align:right">
+									Date:<br />
+									Invoice No.:<br />
+								</td>
+
+								<td style="text-align:right">
+									{{DATE_TODAY}}<br />
+									{{REFERENCE_NUM}}<br />
+
+								</td>
+								{% endif %}
+
 							</tr>
 
 						</table>
