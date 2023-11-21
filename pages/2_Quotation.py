@@ -16,7 +16,7 @@ project_name = dict_project_info['project_name']
 client_contact_person = dict_project_info['client_contact_person']
 client_company_name = dict_project_info['client_company_name']
 client_email = dict_project_info['client_email']
-
+category = dict_project_info['category']
 
 st.subheader('Details')
 list_item, list_quantity, list_rate, list_amount, total_quotation_price = ui.display_project_details()
@@ -40,17 +40,22 @@ if st.button("Generate Quotation"):
                                                       client_company_name=client_company_name,
                                                       client_email=client_email,
                                                       reference_num=quotation_num,
+                                                      category=category,
                                                       df_items=df_items,
                                                       total_price=total_quotation_price,
                                                       )
         
-    
+
+        st.success(f"Quotation Generated for {file_name}")
+        
         # Preview Invoice
         st.download_button(
             label="Preview Quotation",
             data=pdf_remote,
             file_name=file_name,
             mime="application/octet-stream")
+        
+        
 
 
 

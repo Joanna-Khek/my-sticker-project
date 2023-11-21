@@ -104,6 +104,7 @@ def display_project_info_inputs():
     """
    
     # Blank quotation
+    category = st.text_input(label="Category")
     quotation_num = st.text_input(label="Quotation Number")
     project_name = st.text_input(label="Project Name")
     client_contact_person = st.text_input(label="Client Contact Person")
@@ -112,6 +113,7 @@ def display_project_info_inputs():
     
     # Save all the information
     dict_project_info = {'quotation_num': quotation_num,
+                         'category': category,
                          'project_name': project_name,
                          'client_contact_person': client_contact_person,
                          'client_company_name': client_company_name,
